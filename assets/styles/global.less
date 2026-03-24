@@ -1,0 +1,35 @@
+/* input: layout/component class names from app/*.vue */
+/* output: global styles for Navbar/Hero/AboutSection/ChatSection/Index */
+/* description: centralize CSS in one file to match Job-Tips refactor request */
+
+:root {
+  --bg: #ffffff;
+  --primary: #1e40af;
+  --secondary: #3b82f6;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --card-bg: #f8fafc;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
