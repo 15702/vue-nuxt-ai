@@ -6,7 +6,7 @@
     <div class="inner">
       <div class="brand">
         <span class="brand-dot">LA</span>
-        <span class="brand-text">林安 · 个人主页</span>
+        <span class="brand-text">刘豪 · 个人主页</span>
       </div>
     </div>
   </header>

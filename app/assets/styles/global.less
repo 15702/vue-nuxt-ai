@@ -1,15 +1,14 @@
 /* input: layout/component class names from app/*.vue */
-/* output: global styles for Navbar/Hero/AboutSection/ChatSection/Index */
-/* description: centralize CSS in one file to match Job-Tips refactor request */
+/* output: shared global style vars + reset */
+/* description: keep common design tokens and browser reset only */
 
 :root {
-  --bg: #ffffff;
-  --primary: #1e40af;
-  --secondary: #3b82f6;
-  --text: #1e293b;
-  --text-light: #64748b;
-  --border: #e2e8f0;
-  --card-bg: #f8fafc;
+  --bg: #f9fafb;
+  --card-bg: #ffffff;
+  --accent: #2f80ed;
+  --accent-soft: #eff5ff;
+  --text: #0c1f40;
+  --subtext: rgba(12, 31, 64, 0.72);
 }
 
 *, *::before, *::after {
@@ -26,10 +25,14 @@ html, body {
 }
 
 a {
-  color: var(--secondary);
+  color: inherit;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+body {
+  min-height: 100vh;
 }

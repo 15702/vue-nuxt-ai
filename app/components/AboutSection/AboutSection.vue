@@ -67,16 +67,16 @@ export interface AboutSectionProps {
   contactLinks: ContactLink[]
 }
 
-withDefaults(defineProps<Partial<AboutSectionProps>>(), {
+const props = withDefaults(defineProps<AboutSectionProps>(), {
   currentDoingTitle: '现在在做什么',
   currentDoing: '搭个人主页，整理作品集，梳理写作方向',
   strengthsTitle: '擅长的方向',
   strengths: '内容表达 · AI 应用 · 知识整理；喜欢把复杂问题讲成人话',
   interestsTitle: '兴趣领域',
-  interests: ['AI 应用', '写作', '旅行', '内容策划'],
+  interests: () => ['AI 应用', '写作', '旅行', '内容策划'],
   contactTitle: '联系方式',
   contactHint: '欢迎通过下方数字分身了解我，或直接发消息给我',
-  contactLinks: [
+  contactLinks: () => [
     { label: '邮箱（待补充）', href: '#' },
     { label: '微信（待补充）', href: '#' },
     { label: '个人站（待补充）', href: '#' },

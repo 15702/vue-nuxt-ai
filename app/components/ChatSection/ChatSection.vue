@@ -7,10 +7,10 @@
       <div class="chat-card">
         <header class="chat-header">
           <div class="chat-title">
-            林安的数字分身
+            刘豪的数字分身
             <span class="ai-badge">AI</span>
           </div>
-          <div class="chat-subtitle">可以问我关于林安的问题</div>
+          <div class="chat-subtitle">可以问我关于刘豪的问题</div>
         </header>
 
         <div ref="messagesRef" class="messages" aria-live="polite">
@@ -35,6 +35,12 @@
             </div>
           </div>
 
+          <div v-if="isAILoading" class="row row-assistant">
+            <div class="bubble bubble-assistant">
+              <span class="loading-text">AI正在思考...</span>
+            </div>
+          </div>
+
           <div ref="endRef" class="end" />
         </div>
 
@@ -44,7 +50,7 @@
             :key="q"
             class="quick-btn"
             type="button"
-            :disabled="isAssistantTyping || isSending"
+            :disabled="isAssistantTyping || isSending || isAILoading"
             @click="send(q)"
           >
             {{ q }}
@@ -57,13 +63,13 @@
             class="input"
             type="text"
             placeholder="输入你的问题，按 Enter 发送..."
-            :disabled="isAssistantTyping || isSending"
+            :disabled="isAssistantTyping || isSending || isAILoading"
             @keydown.enter.prevent="send()"
           />
           <button
             class="send-btn"
             type="button"
-            :disabled="isAssistantTyping || isSending || !draft.trim()"
+            :disabled="isAssistantTyping || isSending || isAILoading || !draft.trim()"
             @click="send()"
           >
             发送
@@ -78,7 +84,8 @@
 import { nextTick, ref, watch } from 'vue'
 import { useChatSession } from '../../composables/useChatSession'
 
-const { messages, draft, isAssistantTyping, isSending, send } = useChatSession()
+const { apiMessage } = useApi()
+const { messages, draft, isAssistantTyping, isSending, isAILoading, send } = useChatSession()
 
 const endRef = ref<HTMLElement | null>(null)
 const messagesRef = ref<HTMLElement | null>(null)

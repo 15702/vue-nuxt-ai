@@ -28,7 +28,7 @@ export interface HeroProps {
 }
 
 withDefaults(defineProps<HeroProps>(), {
-  name: '林安',
+  name: '刘豪',
   tagline: '一个正在学习用 AI 做产品的内容策划',
   statusText: '数字分身在线',
   letter: '林',

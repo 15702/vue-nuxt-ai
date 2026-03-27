@@ -2,7 +2,8 @@
 
 .chat {
   padding: 20px 0 60px;
-  background-color: #fff;
+  background-color: #f9fafb;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   .inner {
     max-width: 860px;
@@ -10,15 +11,17 @@
     padding: 0 20px;
 
     .chat-card {
-      background: #0a1628;
-      border-radius: 12px;
-      overflow: hidden;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-      .chat-header {
-        padding: 16px 20px;
-        background: #0a1628;
+        .chat-header {
+        padding: 14px 20px;
+        background: #1e293b;
         color: #fff;
-        border-bottom: 1px solid #1e293b;
+        border-bottom: none;
 
         .chat-title {
           font-size: 16px;
@@ -32,23 +35,28 @@
             font-size: 12px;
             font-weight: 400;
             color: #94a3b8;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
           }
         }
 
         .chat-subtitle {
-          font-size: 12px;
-          color: #94a3b8;
+          font-size: 13px;
+          color: #dbeafe;
+          font-weight: 400;
         }
       }
 
       .messages {
         padding: 20px;
-        height: 300px;
+        height: 450px;
         overflow-y: auto;
+        background: #ffffff;
 
         .row {
           display: flex;
-          margin-bottom: 12px;
+          margin-bottom: 16px;
 
           &-user {
             justify-content: flex-end;
@@ -56,24 +64,33 @@
 
           &-assistant {
             justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
           }
+        }
+
+        .avatar {
+          font-size: 18px;
+          margin-top: 2px;
         }
 
         .bubble {
           max-width: 70%;
-          padding: 10px 14px;
-          border-radius: 12px;
+          padding: 12px 16px;
+          border-radius: 18px;
           animation: bubbleIn 0.3s ease;
+          font-size: 14px;
+          line-height: 1.5;
 
           &-user {
-            background: #1e40af;
-            color: #fff;
+            background: #3b82f6;
+            color: #ffffff;
             border-bottom-right-radius: 4px;
           }
 
           &-assistant {
-            background: #1e293b;
-            color: #e2e8f0;
+            background: #f3f4f6;
+            color: #374151;
             border-bottom-left-radius: 4px;
           }
 
@@ -92,7 +109,7 @@
           .dot {
             width: 6px;
             height: 6px;
-            background: #64748b;
+            background: #94a3b8;
             border-radius: 50%;
             animation: typing 1.4s infinite ease-in-out both;
 
@@ -112,24 +129,24 @@
       }
 
       .quick {
-        padding: 0 20px 12px;
+        padding: 0 20px 16px;
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 10px;
 
         .quick-btn {
-          padding: 6px 12px;
-          background: #1e293b;
-          border: 1px solid #334155;
-          border-radius: 16px;
-          font-size: 12px;
-          color: #94a3b8;
+          padding: 8px 16px;
+          background: #eff6ff;
+          border: 1px solid #dbeafe;
+          border-radius: 20px;
+          font-size: 13px;
+          color: #3b82f6;
           cursor: pointer;
           transition: all 0.2s ease;
 
           &:hover:not(:disabled) {
-            background: #334155;
-            color: #e2e8f0;
+            background: #dbeafe;
+            color: #1d4ed8;
           }
 
           &:disabled {
@@ -141,19 +158,20 @@
 
       .composer {
         padding: 16px 20px;
-        border-top: 1px solid #1e293b;
+        border-top: 1px solid #e5e7eb;
         display: flex;
-        gap: 10px;
+        gap: 12px;
 
         .input {
           flex: 1;
-          padding: 10px 14px;
-          border: 1px solid #334155;
-          border-radius: 20px;
+          padding: 12px 16px;
+          border: 1px solid #e5e7eb;
+          border-radius: 24px;
           font-size: 14px;
           outline: none;
-          background: #0f172a;
-          color: #e2e8f0;
+          background: #ffffff;
+          color: #374151;
+          font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
           &:focus {
             border-color: #3b82f6;
@@ -161,18 +179,19 @@
           }
 
           &:disabled {
-            background: #334155;
+            background: #f3f4f6;
             cursor: not-allowed;
           }
         }
 
         .send-btn {
-          padding: 0 20px;
+          padding: 12px 24px;
           background: #3b82f6;
           color: #fff;
           border: none;
-          border-radius: 20px;
+          border-radius: 24px;
           font-size: 14px;
+          font-weight: 500;
           cursor: pointer;
           transition: all 0.2s ease;
 
@@ -181,7 +200,7 @@
           }
 
           &:disabled {
-            background: #334155;
+            background: #e5e7eb;
             cursor: not-allowed;
           }
         }
